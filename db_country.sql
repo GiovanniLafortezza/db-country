@@ -13,3 +13,9 @@ FROM regions r
 JOIN continents c ON c.continent_id = r.continent_id 
 WHERE c.name = 'Europe'
 ORDER BY r.name ASC;
+
+-- 4. Contare quante regioni sono presenti nel continente Africa
+SELECT COUNT(*) AS total_continents
+FROM regions r 
+JOIN continents c ON c.continent_id = r.continent_id 
+WHERE c.name = 'Africa';
