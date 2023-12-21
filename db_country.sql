@@ -56,3 +56,9 @@ ORDER BY c.area DESC;
 -- 10. Modificare la nazione di nome Italy, inserendo come national day il 2 giugno 1946
 UPDATE countries SET national_day = '1946-06-02'
 WHERE name = 'Italy';
+
+-- 11. Selezionare le nazioni il cui national day è avvenuto prima del 1900, ordinate per national day dal più recente al meno recente
+SELECT *
+FROM countries c 
+WHERE YEAR(c.national_day) <= '1900'
+ORDER BY c.national_day DESC;
