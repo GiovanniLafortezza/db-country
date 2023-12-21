@@ -69,3 +69,9 @@ FROM countries c
 JOIN country_languages cl ON cl.country_id = c.country_id 
 JOIN languages l ON l.language_id = cl.language_id 
 WHERE c.name = 'Italy';
+
+-- 13. Per la regione Antarctica mostrare il valore dell’area totale e dell’area media delle nazioni
+SELECT SUM(c.area) AS total_area, AVG(c.area) AS media_area
+FROM countries c 
+JOIN regions r ON r.region_id = c.region_id 
+WHERE r.name = 'Antarctica';
