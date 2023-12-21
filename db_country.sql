@@ -52,3 +52,7 @@ JOIN country_languages cl ON cl.country_id = c.country_id
 JOIN languages l ON l.language_id = cl.language_id 
 WHERE l.`language` = 'hindi'
 ORDER BY c.area DESC;
+
+-- 10. Modificare la nazione di nome Italy, inserendo come national day il 2 giugno 1946
+UPDATE countries SET national_day = '1946-06-02'
+WHERE name = 'Italy';
