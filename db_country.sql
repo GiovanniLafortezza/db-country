@@ -62,3 +62,10 @@ SELECT *
 FROM countries c 
 WHERE YEAR(c.national_day) <= '1900'
 ORDER BY c.national_day DESC;
+
+-- 12. Contare quante lingue sono parlate in Italia
+SELECT COUNT(l.`language`) as `language`
+FROM countries c 
+JOIN country_languages cl ON cl.country_id = c.country_id 
+JOIN languages l ON l.language_id = cl.language_id 
+WHERE c.name = 'Italy';
