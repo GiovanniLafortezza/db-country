@@ -24,3 +24,10 @@ WHERE c.name = 'Africa';
 SELECT *
 FROM countries c 
 WHERE c.national_day IS NULL;
+
+-- 6. Per ogni nazione, in ordine alfabetico, selezionare il nome, la regione e il continente
+SELECT  c.name AS country, r.name AS region, c2.name AS continent
+FROM countries c 
+JOIN regions r ON r.region_id = c.region_id 
+JOIN continents c2 ON c2.continent_id = r.continent_id 
+ORDER BY c.name ASC;
