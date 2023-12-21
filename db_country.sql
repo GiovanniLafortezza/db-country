@@ -44,3 +44,11 @@ SELECT AVG(cs.gdp) as gdp
 FROM countries c 
 JOIN country_stats cs ON cs.country_id = c.country_id 
 WHERE c.name = 'United Kingdom' AND (cs.`year` >= '2000' AND cs.`year` <= '2010');
+
+-- 9. Selezionare tutte le nazioni in cui si parla hindi, ordinate dalla più estesa alla meno estesa
+SELECT c.name AS country, c.area AS area, l.`language` AS `language`
+FROM countries c 
+JOIN country_languages cl ON cl.country_id = c.country_id 
+JOIN languages l ON l.language_id = cl.language_id 
+WHERE l.`language` = 'hindi'
+ORDER BY c.area DESC;
