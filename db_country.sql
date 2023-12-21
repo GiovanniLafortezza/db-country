@@ -19,3 +19,8 @@ SELECT COUNT(*) AS total_continents
 FROM regions r 
 JOIN continents c ON c.continent_id = r.continent_id 
 WHERE c.name = 'Africa';
+
+-- 5. Selezionare quali nazioni non hanno un national day
+SELECT *
+FROM countries c 
+WHERE c.national_day IS NULL;
