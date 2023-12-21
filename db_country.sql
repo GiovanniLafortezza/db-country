@@ -31,3 +31,10 @@ FROM countries c
 JOIN regions r ON r.region_id = c.region_id 
 JOIN continents c2 ON c2.continent_id = r.continent_id 
 ORDER BY c.name ASC;
+
+-- 7. Selezionare le lingue ufficiali dell’Albania
+SELECT cl.official AS official , l.`language` AS `language` 
+FROM countries c 
+JOIN country_languages cl ON cl.country_id = c.country_id 
+JOIN languages l ON l.language_id = cl.language_id 
+WHERE c.name = 'Albania' AND cl.official = 1 ;
